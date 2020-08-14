@@ -23,15 +23,16 @@ module.exports = ({ mode, presets } = { mode: "production", presets: [] }) => {
     ],
     module: {
       rules: [
-        {
-          test: /\.(jpe?g|svg)$/i,
-          use: [
-            {
-              loader: "url-loader",
-              options: { limit: 5000 }, // if image is less than 5000 bytes return blog else copy the file to the dist dir and return base64 encoded url
-            },
-          ],
-        },
+        { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
+        // {
+        //   test: /\.(jpe?g|svg)$/i,
+        //   use: [
+        //     {
+        //       loader: "url-loader",
+        //       options: { limit: 5000 }, // if image is less than 5000 bytes return blog else copy the file to the dist dir and return base64 encoded url
+        //     },
+        //   ],
+        // },
       ],
     },
   };
