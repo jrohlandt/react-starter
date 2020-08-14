@@ -1,0 +1,7 @@
+.mynav {
+  font-family: fantasy;
+}
+.mynav ul li {
+  color: teal;
+  list-style: none;
+}

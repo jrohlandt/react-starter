@@ -1,0 +1,18 @@
+.mynav {
+  font-family: fantasy;
+}
+.mynav ul li {
+  color: teal;
+  list-style: none;
+}
+
+.mybutton {
+  background: greenyellow;
+  color: rgb(19, 127, 177);
+  font-weight: bold;
+  text-transform: uppercase;
+  border: thick solid goldenrod;
+  border-radius: 5px;
+  text-decoration: underline;
+}
+
