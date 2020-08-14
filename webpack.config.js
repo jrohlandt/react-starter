@@ -3,6 +3,7 @@ const webpack = require("webpack");
 const { merge } = require("webpack-merge");
 
 const modeConfig = (env) => require(`./build-utils/webpack.${env}`)(env);
+const presetConfig = require("./build-utils/loadPresets");
 
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const NotifyWhenDonePlugin = require("./build-utils/plugins/NotifyWhenDonePlugin");
@@ -34,5 +35,5 @@ module.exports = ({ mode, presets } = { mode: "production", presets: [] }) => {
       ],
     },
   };
-  return merge(baseConfig, modeConfig(mode));
+  return merge(baseConfig, modeConfig(mode), presetConfig({ mode, presets }));
 };
