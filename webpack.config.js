@@ -20,6 +20,19 @@ module.exports = ({ mode, presets } = { mode: "production", presets: [] }) => {
       new NotifyWhenDonePlugin(),
       new HtmlWebpackPlugin(),
     ],
+    module: {
+      rules: [
+        {
+          test: /\.(jpe?g|svg)$/i,
+          use: [
+            {
+              loader: "url-loader",
+              options: { limit: 5000 }, // if image is less than 5000 bytes return blog else copy the file to the dist dir and return base64 encoded url
+            },
+          ],
+        },
+      ],
+    },
   };
   return merge(baseConfig, modeConfig(mode));
 };
