@@ -13,7 +13,7 @@ module.exports = ({ mode, presets } = { mode: "production", presets: [] }) => {
     mode,
     entry: "./src/index.js",
     output: {
-      path: path.resolve(__dirname, "myDist"),
+      path: path.resolve(__dirname, "dist"),
       filename: "./bundle.js",
     },
     plugins: [
@@ -23,7 +23,7 @@ module.exports = ({ mode, presets } = { mode: "production", presets: [] }) => {
     ],
     module: {
       rules: [
-        { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
+        { test: /\.jsx?$/, exclude: /node_modules/, loader: "babel-loader" },
         // {
         //   test: /\.(jpe?g|svg)$/i,
         //   use: [
